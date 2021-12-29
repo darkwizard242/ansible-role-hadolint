@@ -1,0 +1,10 @@
+---
+# tasks file for hadolint - Debian/Ubuntu Family
+
+- name: EL Family | Downloading and setting up {{ hadolint_app }} {{ hadolint_version }}
+  get_url:
+    url: "{{ hadolint_dl_url }}"
+    dest: "{{ hadolint_bin_path }}/{{ hadolint_app }}"
+    mode: "{{ hadolint_bin_permission_mode }}"
+    owner: root
+    group: root
