@@ -16,7 +16,7 @@ Available variables are listed below (located in `defaults/main.yml`):
 
 ```yaml
 hadolint_app: hadolint
-hadolint_version: 2.8.0
+hadolint_version: 2.9.1
 hadolint_os: Linux
 hadolint_arch: x86_64
 hadolint_dl_url: https://github.com/{{ hadolint_app }}/{{ hadolint_app }}/releases/download/v{{ hadolint_version }}/{{ hadolint_app }}-{{ hadolint_os }}-{{ hadolint_arch }}
@@ -29,7 +29,7 @@ hadolint_bin_permission_mode: '0755'
 Variable                     | Description
 ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------
 hadolint_app                 | Defines the app to install i.e. **hadolint**
-hadolint_version             | Defined to dynamically fetch the desired version to install. Defaults to: **2.8.0**
+hadolint_version             | Defined to dynamically fetch the desired version to install. Defaults to: **2.9.1**
 hadolint_os                  | Defines os type. Defaults to: **Linux**
 hadolint_arch                | Defines os architecture. Defaults to: **x86_64**
 hadolint_dl_url              | Defines URL to download the hadolint binary from.
