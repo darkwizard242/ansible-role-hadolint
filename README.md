@@ -17,9 +17,17 @@ Available variables are listed below (located in `defaults/main.yml`):
 ```yaml
 hadolint_app: hadolint
 hadolint_version: 2.12.0
-hadolint_os: Linux
-hadolint_arch: x86_64
-hadolint_dl_url: https://github.com/{{ hadolint_app }}/{{ hadolint_app }}/releases/download/v{{ hadolint_version }}/{{ hadolint_app }}-{{ hadolint_os }}-{{ hadolint_arch }}
+hadolint_os: "{{ ansible_system }}"
+hadolint_architecture_map:
+  amd64: x86_64
+  arm: arm64
+  x86_64: x86_64
+  armv6l: armv6
+  armv7l: armv7
+  aarch64: arm64
+  32-bit: "386"
+  64-bit: x86_64
+hadolint_dl_url: https://github.com/{{ hadolint_app }}/{{ hadolint_app }}/releases/download/v{{ hadolint_version }}/{{ hadolint_app }}-{{ hadolint_os }}-{{ hadolint_architecture_map[ansible_architecture] }}
 hadolint_bin_path: "/usr/local/bin"
 hadolint_bin_permission_mode: '0755'
 ```
@@ -30,8 +38,8 @@ Variable                     | Description
 ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------
 hadolint_app                 | Defines the app to install i.e. **hadolint**
 hadolint_version             | Defined to dynamically fetch the desired version to install. Defaults to: **2.12.0**
-hadolint_os                  | Defines os type. Defaults to: **Linux**
-hadolint_arch                | Defines os architecture. Defaults to: **x86_64**
+hadolint_os                  | Defines os type.
+hadolint_architecture_map    | Defines os architecture.
 hadolint_dl_url              | Defines URL to download the hadolint binary from.
 hadolint_bin_path            | Defined to dynamically set the appropriate path to store hadolint binary into. Defaults to (as generally available on any user's PATH): **/usr/local/bin**
 hadolint_bin_permission_mode | Defines the permission mode level for the file. Defaults to: `0755`
