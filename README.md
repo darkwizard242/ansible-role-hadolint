@@ -16,7 +16,7 @@ Available variables are listed below (located in `defaults/main.yml`):
 
 ```yaml
 hadolint_app: hadolint
-hadolint_version: 2.13.1
+hadolint_version: 2.14.0
 hadolint_os: "{{ ansible_system }}"
 hadolint_architecture_map:
   amd64: x86_64
@@ -37,7 +37,7 @@ hadolint_bin_permission_mode: '0755'
 Variable                     | Description
 ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------
 hadolint_app                 | Defines the app to install i.e. **hadolint**
-hadolint_version             | Defined to dynamically fetch the desired version to install. Defaults to: **2.13.1**
+hadolint_version             | Defined to dynamically fetch the desired version to install. Defaults to: **2.14.0**
 hadolint_os                  | Defines os type.
 hadolint_architecture_map    | Defines os architecture.
 hadolint_dl_url              | Defines URL to download the hadolint binary from.
